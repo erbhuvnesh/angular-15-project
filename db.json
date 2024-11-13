@@ -1,0 +1,42 @@
+{
+  "charts": [
+    {
+      "type": "line",
+      "title": "Sales Data",
+      "labels": [
+        "January",
+        "February",
+        "March"
+      ],
+      "data": [
+        30,
+        20,
+        50
+      ],
+      "options": {
+        "borderColor": "#e60f0f"
+      },
+      "id": "1"
+    },
+    {
+      "id": "2",
+      "type": "line",
+      "title": "Revenue Growth",
+      "labels": [
+        "Q1",
+        "Q2",
+        "Q3",
+        "Q4"
+      ],
+      "data": [
+        100,
+        200,
+        300,
+        400
+      ],
+      "options": {
+        "borderColor": "#66BB6A"
+      }
+    }
+  ]
+}

@@ -1,0 +1,15 @@
+<button mat-raised-button color="primary" (click)="openAddChartDialog()">Add Chart</button>
+
+<div class="dashboard">
+  <div class="chart-container" *ngFor="let chart of charts">
+    <h3>{{ chart.title }}</h3>
+    <button mat-icon-button color="primary" (click)="openEditChartDialog(chart)">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <canvas baseChart
+            [datasets]="[{ data: chart.data, backgroundColor: chart.options.backgroundColor, borderColor: chart.options.borderColor }]"
+            [labels]="chart.labels"
+            [chartType]="chart.type">
+    </canvas>
+  </div>
+</div>

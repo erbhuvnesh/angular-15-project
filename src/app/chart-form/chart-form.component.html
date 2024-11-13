@@ -1,0 +1,24 @@
+<h2>{{ isEditMode ? 'Edit Chart' : 'Add Chart' }}</h2>
+<form [formGroup]="chartForm" (ngSubmit)="onSubmit()">
+  <label>Type:</label>
+  <select formControlName="type" (change)="onChartTypeChange(chartForm.value.type)">
+    <option *ngFor="let type of chartTypes" [value]="type">{{ type | titlecase }}</option>
+  </select>
+
+  <label>Title:</label>
+  <input formControlName="title" />
+
+  <label>Labels (comma-separated):</label>
+  <input formControlName="labels" />
+
+  <label>Data (comma-separated):</label>
+  <input formControlName="data" />
+
+  <div *ngFor="let field of dynamicFields">
+    <label>{{ field.label }}:</label>
+    <input [type]="field.type" [formControlName]="field.name" />
+  </div>
+
+  <button mat-button type="submit" [disabled]="chartForm.invalid">{{ isEditMode ? 'Save Changes' : 'Add Chart' }}</button>
+  <button mat-button (click)="onClose()">Cancel</button>
+</form>
